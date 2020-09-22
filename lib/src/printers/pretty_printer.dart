@@ -253,7 +253,7 @@ class PrettyPrinter extends LogPrinter {
     for (var line in message.split('\n')) {
       if (line.length >= 800) {
         buffer.add(color('$verticalLine $emoji'));
-        final pattern = new RegExp('.{1,800}'); // 800 is the size of each chunk
+        final pattern = RegExp('.{1,800}'); // 800 is the size of each chunk
         pattern.allMatches(line).forEach((match) => buffer.add(match.group(0)));
       } else {
         buffer.add(color('$verticalLine $emoji$line'));
